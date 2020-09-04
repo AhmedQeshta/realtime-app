@@ -19,4 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+define('PAGINATION_COUNT',10);
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('comment', 'HomeController@saveComment')->name('comment.save');
