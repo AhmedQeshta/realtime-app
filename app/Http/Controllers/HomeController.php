@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\NewNotification;
 use App\Models\Comment;
 use App\Models\Post;
 use Illuminate\Http\Request;
@@ -48,7 +49,7 @@ class HomeController extends Controller
 
         ///   save  notify in database table ////
 
-//        event(new NewNotification($data));
+        event(new NewNotification($data));
 
         return redirect()->back()->with(['success'=> 'تم اضافه تعليقك بنجاح ']);
     }
